@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Welcome to procoders</h1>
+<span class="user1">
+{% if request.user.is_authenticated %}
+<div class="well well-sm">Hello {{ request.user.first_name }}</div>
+{% endif %}
+<h1>Doubts</h1>
+{% for question in questions %}
+<div>
+<h1>doubt-{{question.doubt}}</h1>
+<h1>base price-{{question.base_price}}</h1>
+<a href="#">Take Up</a>
+</div>
+{% endfor %}
+{% endblock %}
